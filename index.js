@@ -805,11 +805,13 @@
             // Reset the time clock.
             this.time = getTimeStamp();
 
-            parent.postMessage({
-              type:"gameOver",
-              score:this.distanceRan,
-                highscore:this.highestScore
-            });
+            window.parent.postMessage({
+              event_id:"gameOver",
+              data{
+                  score:this.distanceRan.toString(),
+                  highscore:this.highestScore.toString()
+              }
+            }, "*");
         },
 
         stop: function () {
