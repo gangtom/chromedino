@@ -806,10 +806,10 @@
             this.time = getTimeStamp();
 
             window.parent.postMessage({
-              event_id:"gameOver",
+              event_id:"gameovernow",
               data{
-                  score:this.distanceRan.toString(),
-                  highscore:this.highestScore.toString()
+                  score:this.distanceRan,
+                  highscore:this.highestScore
               }
             }, "*");
         },
